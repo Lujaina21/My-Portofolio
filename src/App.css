@@ -1,0 +1,138 @@
+:root {
+  --main-color: #149ddd;
+  --secondary-color: #040b14;
+  --light-color: #e0f4ff;
+}
+
+.bg-main {
+  background-color: var(--main-color);
+}
+.txt-main {
+  color: var(--main-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+.txt-secondary {
+  color: var(--secondary-color);
+}
+
+.bg-light {
+  background-color: var(--light-color);
+}
+
+.standard-ht {
+  height: 100%;
+  min-height: 100vh;
+}
+
+.main-title {
+  background-color: var(--main-color);
+  font-weight: bold;
+  font-size: 40px;
+  font-family: "Emilys Candy", serif;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 4.2px;
+}
+
+.default-font {
+  font-family: "Outfit", serif;
+}
+.typing-font {
+  font-family: "Quantico", serif;
+}
+.cool-font {
+  font-family: "Emilys Candy", serif;
+}
+
+/** Slide From Top */
+@-webkit-keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-slideIn {
+  -webkit-animation: slideIn 0.5s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/** Slide from Left gradually */
+@-webkit-keyframes slideInFromLeft {
+  from {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slideInFromLeft {
+  -webkit-animation: slideInFromLeft 0.5s ease-in-out;
+  animation: slideInFromLeft 0.5s ease-in-out;
+}
+
+/** Slide from Left */
+@-webkit-keyframes slideInX {
+  from {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInX {
+  from {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slideInX {
+  -webkit-animation: slideInX 0.5s ease-in-out;
+  animation: slideInX 0.5s ease-in-out;
+}

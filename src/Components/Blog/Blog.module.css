@@ -1,0 +1,30 @@
+.bodyBg {
+  font-family: "Quantico", serif;
+}
+
+.btn {
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+  letter-spacing: 2.4px;
+}
+
+.blackBorder {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border: 2px dashed #6b7280;
+}
+
+.imgContainer {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.socialIcons {
+  left: 40%;
+  top: 50%;
+  z-index: 10;
+}

@@ -1,0 +1,14 @@
+.btn {
+  color: #fff;
+  background-color: var(--main-color);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 3px solid transparent;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
