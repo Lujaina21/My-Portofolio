@@ -20,6 +20,7 @@ import postman from "./../../assets/Skills Imgs/dev tools/postman.png";
 import vercel from "./../../assets/Skills Imgs/dev tools/vercel.png";
 import vsCode from "./../../assets/Skills Imgs/dev tools/vs code.png";
 import figma from "./../../assets/Skills Imgs/dev tools/figma.png";
+import jquery from "./../../assets/Skills Imgs/jquery.png";
 
 export default function Skills() {
   const front_skills = [
@@ -34,6 +35,7 @@ export default function Skills() {
     { name: "Redux", img: redux },
     { name: "Restful API", img: restApi },
     { name: "TypeScript", img: ts },
+    { name: "jQuery", img: jquery },
   ];
 
   const cs_skills = [
