@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./Experience.module.css";
 import routeLogo from "./../../assets/download.png";
 import itiLogo from "./../../assets/itiLogo.png";
 import gdscLogo from "./../../assets/gdsc.png";
@@ -11,7 +10,7 @@ export default function Experience() {
 
   return (
     <>
-      <div className="sm:ml-64 bg-light standard-ht">
+      <div className="sm:ml-72 bg-light standard-ht">
         <h1 className="main-title py-4 px-10 w-full">Experience</h1>
         <div className="p-10 default-font">
           <div id="accordion-open" data-accordion="open">

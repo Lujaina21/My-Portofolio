@@ -4,16 +4,16 @@ import resumeStyles from "./Resume.module.css";
 export default function Resume() {
   function handlePreview() {
     window.open(
-      "https://drive.google.com/file/d/1SA63_j_sMEoipFIyMPScutve4xX19qld/view?usp=sharing",
+      "https://drive.google.com/file/d/1XABaPCLQ2xR2U3tKMtpQC5cmvwgIvwao/view?usp=sharing",
       "_blank"
     );
   }
   const prevPDF =
-    "https://drive.google.com/file/d/1SA63_j_sMEoipFIyMPScutve4xX19qld/preview";
+    "https://drive.google.com/file/d/1XABaPCLQ2xR2U3tKMtpQC5cmvwgIvwao/preview";
 
   return (
     <>
-      <div className=" sm:ml-64 bg-light standard-ht default-font">
+      <div className=" sm:ml-72 bg-light standard-ht default-font">
         <h1 className="main-title py-4 px-10 w-full">Resume</h1>
         <div className="p-14">
           <div className={`mb-7 ${resumeStyles.btn}`}>

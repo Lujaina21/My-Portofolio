@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function NotFound() {
   return (
     <>
-      <div className=" sm:ml-64 bg-light standard-ht">
+      <div className=" sm:ml-72 bg-light standard-ht">
         <h1 className="main-title py-4 px-10 w-full">Not Found</h1>
         <div className="p-10 cool-font">
           <div className="flex flex-col gap-6 justify-center items-center mt-28">

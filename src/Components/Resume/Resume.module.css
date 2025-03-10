@@ -1,5 +1,7 @@
 .btn {
   color: #fff;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   background-color: var(--main-color);
   -webkit-transition: all 0.3s ease-in-out;

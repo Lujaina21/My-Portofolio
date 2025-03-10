@@ -25,9 +25,7 @@ export default function Blog() {
 
   return (
     <>
-      <main
-        className={`${blogStyles.bodyBg} standard-ht bg-light p-10`}
-      >
+      <main className={`${blogStyles.bodyBg} standard-ht bg-light p-10`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-14">
           {/* Figcaption */}
           <figcaption className="w-full text-4xl text-gray-800 italic flex flex-col text-center md:text-start ms-10">

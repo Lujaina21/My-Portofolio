@@ -5,7 +5,7 @@ import routeImg from "./../../assets/download.png";
 export default function Education() {
   return (
     <>
-      <div className="sm:ml-64 bg-light standard-ht">
+      <div className="sm:ml-72 bg-light standard-ht">
         <h1 className="main-title py-4 px-10 w-full">Education</h1>
         <div className="p-10 grid grid-cols-1 lg:grid-cols-2 gap-4 default-font">
           <div className="bg-white shadow-lg p-5 rounded-lg">

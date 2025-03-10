@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <>
-      <div className="typing-font standard-ht sm:ml-64 p-10 bg-light">
+      <div className="typing-font standard-ht sm:ml-72 p-10 bg-light">
         <div className="bg-gray-800 text-white w-full p-6 rounded-lg shadow-lg relative transition-transform transform animate-slideIn">
           {/* Browser Bar */}
           <div className="bg-gray-700 h-6 w-full rounded-t-lg flex items-center px-3 space-x-2">

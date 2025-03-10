@@ -14,7 +14,7 @@ export default function About() {
   ];
   return (
     <>
-      <div className=" sm:ml-64 bg-light standard-ht">
+      <div className=" sm:ml-72 bg-light standard-ht">
         <h1 className="main-title py-4 px-10 w-full">About</h1>
         <div className="p-10 default-font">
           <h2 className="txt-main text-xl font-bold  mb-5 tracking-wide">

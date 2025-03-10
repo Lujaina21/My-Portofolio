@@ -10,10 +10,10 @@ export default function Contact() {
 
   return (
     <>
-      <div className="bg-light standard-ht sm:ml-64">
+      <div className="bg-light standard-ht sm:ml-72">
         <h1 className="main-title py-4 px-10 w-full">Contact</h1>
         <div className="p-10 default-font">
-          <ul className="pl-5">
+          <ul>
             {/* Email */}
             <li
               className={`${contactStyles.contact1} flex items-center gap-4 my-10`}
