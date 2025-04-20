@@ -63,7 +63,6 @@ function App() {
   return (
     <>
       <RouterProvider router={routes}></RouterProvider>
-      {/* <Toaster position="top-right" reverseOrder={true} /> */}
     </>
   );
 }
