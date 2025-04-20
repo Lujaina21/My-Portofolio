@@ -4,12 +4,12 @@ import resumeStyles from "./Resume.module.css";
 export default function Resume() {
   function handlePreview() {
     window.open(
-      "https://drive.google.com/file/d/1vlhuRUaOg4CkZkfd-JDcAuyu3aX58TBl/view?usp=sharing",
+      "https://drive.google.com/file/d/1IqPe_I2CQQr4ZrtsFrAyO78SQa8ByB_u/view?usp=sharing",
       "_blank"
     );
   }
   const prevPDF =
-    "https://drive.google.com/file/d/1vlhuRUaOg4CkZkfd-JDcAuyu3aX58TBl/preview";
+    "https://drive.google.com/file/d/1IqPe_I2CQQr4ZrtsFrAyO78SQa8ByB_u/preview";
 
   return (
     <>
