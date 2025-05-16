@@ -1,14 +1,36 @@
 import React from "react";
 import universityImg from "./../../assets/damanhour univ.png";
 import routeImg from "./../../assets/download.png";
+import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
 
 export default function Education() {
   return (
     <>
       <div className="sm:ml-72 bg-light standard-ht">
         <h1 className="main-title py-4 px-10 w-full">Education</h1>
-        <div className="p-10 grid grid-cols-1 lg:grid-cols-2 gap-4 default-font">
-          <div className="bg-white shadow-lg p-5 rounded-lg">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="p-10 grid grid-cols-1 lg:grid-cols-2 gap-4 default-font"
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+            viewport={{ once: true }}
+            className="bg-white shadow-lg p-5 rounded-lg"
+          >
             <div className="flex justify-between items-center mb-4">
               <h2 className="txt-main text-3xl my-1 font-bold underline italic">
                 <a
@@ -18,7 +40,14 @@ export default function Education() {
                   Damanhour University
                 </a>
               </h2>
-              <img
+              <LazyLoadImage
+                effect="blur"
+                wrapperProps={{
+                  style: {
+                    transitionDuration: 0.5,
+                    transitionDelay: "0.1s",
+                  },
+                }}
                 src={universityImg}
                 alt="Damanhour University Logo"
                 className="w-10"
@@ -33,8 +62,14 @@ export default function Education() {
               <li>Software Engineer</li>
               <li>CGPA: B+</li>
             </ul>
-          </div>
-          <div className="bg-white shadow-lg p-5 rounded-lg">
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+            viewport={{ once: true }}
+            className="bg-white shadow-lg p-5 rounded-lg"
+          >
             <div className="flex justify-between items-center mb-4">
               <h2 className="txt-main text-3xl my-1 font-bold underline italic">
                 <a
@@ -44,7 +79,18 @@ export default function Education() {
                   Route Academy
                 </a>
               </h2>
-              <img src={routeImg} alt="Route Academy Logo" className="w-12" />
+              <LazyLoadImage
+                effect="blur"
+                wrapperProps={{
+                  style: {
+                    transitionDuration: 0.5,
+                    transitionDelay: "0.1s",
+                  },
+                }}
+                src={routeImg}
+                alt="Route Academy Logo"
+                className="w-12"
+              />
             </div>
             <h3 className="font-bold text-lg text-gray-800">
               Front-End Development Diploma
@@ -55,8 +101,8 @@ export default function Education() {
               <li>Graduated in February 2025</li>
               <li>React.js Developer</li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </>
   );

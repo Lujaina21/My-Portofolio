@@ -1,4 +1,19 @@
+import { delay, motion } from "framer-motion";
 import React from "react";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 export default function About() {
   const details = [
@@ -12,12 +27,20 @@ export default function About() {
     { label: "Birthdate", value: "21-10-2001" },
     { label: "Age", value: "23" },
   ];
+
   return (
     <>
       <div className=" sm:ml-72 bg-light standard-ht">
         <h1 className="main-title py-4 px-10 w-full">About</h1>
         <div className="p-10 default-font">
-          <h2 className="txt-main text-xl font-bold  mb-5 tracking-wide">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { duration: 1, ease: "easeInOut" },
+            }}
+            className="txt-main text-xl font-bold  mb-5 tracking-wide"
+          >
             - A passionate fronted developer using{" "}
             <span className="border-b-2 border-gray-500 hover:italic">
               <a
@@ -34,18 +57,23 @@ export default function About() {
               </a>
             </span>
             .
-          </h2>
-          <div className="transition-transform transform animate-slideInX">
-            <ul className="text-lg">
+          </motion.h2>
+          <div>
+            <motion.ul
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="text-lg"
+            >
               {details.map((item, index) => (
-                <li key={index} className="my-4">
+                <motion.li variants={itemVariants} key={index} className="my-4">
                   <i className="fas fa-chevron-right txt-main"></i>
                   <strong className="ms-3 text-gray-700">{item.label}</strong>
                   <span className="mx-3 font-bold txt-main">:</span>
                   <span className="italic typing-font">{item.value}</span>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
         </div>
       </div>

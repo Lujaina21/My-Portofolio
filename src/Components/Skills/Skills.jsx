@@ -21,6 +21,16 @@ import vercel from "./../../assets/Skills Imgs/dev tools/vercel.png";
 import vsCode from "./../../assets/Skills Imgs/dev tools/vs code.png";
 import figma from "./../../assets/Skills Imgs/dev tools/figma.png";
 import jquery from "./../../assets/Skills Imgs/jquery.png";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.6,
+    },
+  },
+};
 
 export default function Skills() {
   const front_skills = [
@@ -58,8 +68,17 @@ export default function Skills() {
     <>
       <div className="sm:ml-72 bg-light standard-ht">
         <h1 className="main-title py-4 px-10 w-full">Skills</h1>
-        <div className="p-10 grid grid-cols-1 lg:grid-cols-2 gap-4 default-font">
-          <div className="bg-white shadow-lg p-5 rounded-lg">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="p-10 grid grid-cols-1 lg:grid-cols-2 gap-4 default-font"
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+            className="bg-white shadow-lg p-5 rounded-lg"
+          >
             <div className="mb-4">
               <h2 className="txt-main border-b-2 border-gray-200 text-xl my-1 font-bold italic">
                 Frontend Development Skills:
@@ -79,9 +98,13 @@ export default function Skills() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-white shadow-lg p-5 rounded-lg">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+            className="bg-white shadow-lg p-5 rounded-lg"
+          >
             <div className="mb-4">
               <h2 className="txt-main border-b-2 border-gray-200 text-xl my-1 font-bold italic">
                 Programming & CS Skills:
@@ -101,9 +124,14 @@ export default function Skills() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-white shadow-lg p-5 rounded-lg">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+            viewport={{ once: true }}
+            className="bg-white shadow-lg p-5 rounded-lg"
+          >
             <div className="mb-4">
               <h2 className="txt-main border-b-2 border-gray-200 text-xl my-1 font-bold italic">
                 Development Tools:
@@ -123,8 +151,8 @@ export default function Skills() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </>
   );

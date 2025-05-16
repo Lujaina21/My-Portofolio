@@ -4,6 +4,31 @@ import blogStyles from "./Blog.module.css";
 import ProfileImg from "./../../assets/me.png";
 import drawnArrow from "./../../assets/right-arrow.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const waveAnimation = {
+  rotate: [0, 20, -10, 20, -10, 0],
+  transition: {
+    duration: 1.5,
+    repeat: Infinity,
+    repeatDelay: 1,
+    ease: "easeInOut",
+  },
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
 
 export default function Blog() {
   const typedRef = useRef(null);
@@ -27,17 +52,32 @@ export default function Blog() {
     <>
       <main className={`${blogStyles.bodyBg} standard-ht bg-light p-10`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-14">
-          {/* Figcaption */}
-          <figcaption className="w-full text-4xl text-gray-800 italic flex flex-col text-center md:text-start ms-10">
-            <h1>Hi there! 👋</h1>
-            <h1 className="lg:my-6">
+          <motion.figcaption
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="w-full text-4xl text-gray-800 italic flex flex-col text-center md:text-start ms-10"
+          >
+            <motion.h1 variants={itemVariants}>
+              Hi there!{" "}
+              <motion.span
+                animate={waveAnimation}
+                style={{ display: "inline-block", originX: 0.7, originY: 0.7 }}
+              >
+                👋
+              </motion.span>
+            </motion.h1>
+            <motion.h1 variants={itemVariants} className="lg:my-6">
               I am
               <span className="font-bold ms-2">Lujaina Walid</span>
-            </h1>
-            <p>
+            </motion.h1>
+            <motion.p variants={itemVariants}>
               <span className="autotype text-3xl" ref={typedRef}></span>
-            </p>
-            <div className="flex items-end content-center mt-12">
+            </motion.p>
+            <motion.div
+              variants={itemVariants}
+              className="flex items-end content-center mt-12"
+            >
               <img width={80} src={drawnArrow} alt="Hand Drawn Arrow" />
               <button
                 className={`${blogStyles.btn} ms-2 text-xl text-center group`}
@@ -47,10 +87,9 @@ export default function Blog() {
                   <i className="fa-solid fa-mug-saucer ms-2 text-md drop-shadow-lg"></i>
                 </Link>
               </button>
-            </div>
-          </figcaption>
+            </motion.div>
+          </motion.figcaption>
 
-          {/* Figure */}
           <figure className="relative w-full flex justify-center">
             <div
               className={`${blogStyles.blackBorder} relative  top-0 right-16 w-64 h-64 lg:w-96 lg:h-96`}

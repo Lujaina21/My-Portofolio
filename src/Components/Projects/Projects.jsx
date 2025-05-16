@@ -14,6 +14,29 @@ import js3 from "./../../assets/Projects Imgs/js3.png";
 import js4 from "./../../assets/Projects Imgs/js4.png";
 import js5 from "./../../assets/Projects Imgs/js5.png";
 import js6 from "./../../assets/Projects Imgs/js6.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.6,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function Projects() {
   useEffect(() => {
@@ -89,15 +112,29 @@ export default function Projects() {
               role="tabpanel"
               aria-labelledby="htmlcss-tab"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+              >
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={gradImg}
                       alt="Graduation Project Img"
+                      loading="lazy"
                     />
                     <div
                       className={`absolute w-full h-full ${projectStyles.layer}`}
@@ -138,13 +175,21 @@ export default function Projects() {
                       HTML, CSS, and basic JavaScript for dynamic functionality.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={hc1}
                       alt="Devfolio landing page Img"
@@ -187,13 +232,21 @@ export default function Projects() {
                       Portofolio landing page built with Bootstrap.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={hc2}
                       alt="Daniels portofolio section Img"
@@ -237,13 +290,21 @@ export default function Projects() {
                       animations.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={hc3}
                       alt="Cyber Security home page Img"
@@ -287,13 +348,21 @@ export default function Projects() {
                       but without responsiveness.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={hc4}
                       alt="Mealify landing page Img"
@@ -337,8 +406,8 @@ export default function Projects() {
                       animations for an enhanced user experience.
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
 
             {/* JS Content */}
@@ -348,12 +417,25 @@ export default function Projects() {
               role="tabpanel"
               aria-labelledby="javascript-tab"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+              >
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={js1}
                       alt="Online Games website Img"
@@ -400,13 +482,21 @@ export default function Projects() {
                       individual game details.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={js2}
                       alt="Weather Forecast website Img"
@@ -453,13 +543,21 @@ export default function Projects() {
                       more.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={js3}
                       alt="Smart Login website Img"
@@ -503,13 +601,21 @@ export default function Projects() {
                       featuring validations and regular expressions.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={js4}
                       alt="Bookmarker website Img"
@@ -555,13 +661,20 @@ export default function Projects() {
                       of saved bookmarks, and store them locally.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={js5}
                       alt="Smart Login website Img"
@@ -605,13 +718,21 @@ export default function Projects() {
                       real-time.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={js6}
                       alt="Quotes Generator website Img"
@@ -657,8 +778,8 @@ export default function Projects() {
                       "Another Quote" button.
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
 
             {/* React Content */}
@@ -668,12 +789,25 @@ export default function Projects() {
               role="tabpanel"
               aria-labelledby="react-tab"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+              >
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={react1}
                       alt="Start of framework home page Img"
@@ -717,13 +851,21 @@ export default function Projects() {
                       Application.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={react2}
                       alt="Recipes home page Img"
@@ -772,13 +914,21 @@ export default function Projects() {
                       visually appealing user experience across all devices.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
+                  variants={cardVariants}
                   className={`${projectStyles.box} max-w-sm bg-white rounded-lg shadow-md`}
                 >
                   <div className={`relative ${projectStyles.boxImg}`}>
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
+                      wrapperProps={{
+                        style: {
+                          transitionDuration: 1,
+                          transitionDelay: "0.3s",
+                        },
+                      }}
                       className={`rounded-t-lg`}
                       src={react3}
                       alt="Fresh Market home page Img"
@@ -829,8 +979,8 @@ export default function Projects() {
                       Formik. Integrated React Hot Toast for user notifications.
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import resumeStyles from "./Resume.module.css";
+import { motion } from "framer-motion";
 
 export default function Resume() {
   function handlePreview() {
@@ -24,7 +25,14 @@ export default function Resume() {
               Preview <i className="fa-solid fa-magnifying-glass ms-1"></i>
             </button>
           </div>
-          <iframe src={prevPDF} className="w-full h-screen" frameborder="0" />
+          <motion.iframe
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            src={prevPDF}
+            className="w-full h-screen"
+            frameborder="0"
+          />
         </div>
       </div>
     </>
