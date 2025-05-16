@@ -5,6 +5,7 @@ import ProfileImg from "./../../assets/me.png";
 import drawnArrow from "./../../assets/right-arrow.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ParticlesComponent from "../Particles";
 
 const waveAnimation = {
   rotate: [0, 20, -10, 20, -10, 0],
@@ -51,12 +52,13 @@ export default function Blog() {
   return (
     <>
       <main className={`${blogStyles.bodyBg} standard-ht bg-light p-10`}>
+        <ParticlesComponent id="particles" className="absolute z-0" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-14">
           <motion.figcaption
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="w-full text-4xl text-gray-800 italic flex flex-col text-center md:text-start ms-10"
+            className="relative z-10 w-full text-4xl text-gray-800 italic flex flex-col text-center md:text-start ms-10"
           >
             <motion.h1 variants={itemVariants}>
               Hi there!{" "}
